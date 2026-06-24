@@ -1,0 +1,65 @@
+{
+    "schema_version": 1,
+    "created_at": "2026-06-24T15:14:56.588472Z",
+    "harbor": {
+        "version": "0.15.0",
+        "is_editable": false
+    },
+    "invocation": [
+        "C:\\Users\\rajan\\.local\\bin\\harbor",
+        "run",
+        "--path",
+        ".",
+        "--agent",
+        "nop"
+    ],
+    "n_concurrent_trials": 4,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "VerifierOutputParseError",
+            "AgentTimeoutError",
+            "RewardFileEmptyError",
+            "VerifierTimeoutError",
+            "RewardFileNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "task": {
+                "name": "log-report",
+                "type": "local",
+                "digest": "sha256:b1880ac4fc352e49a8903ed6db1b6434e850f755e0c404fa99372bd9bb26a8be",
+                "path": "."
+            },
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "nop",
+                "skills": [],
+                "extra_allowed_hosts": [],
+                "kwargs": {},
+                "env": {},
+                "mcp_servers": []
+            },
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "env": {},
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "env": {},
+                "disable": false
+            }
+        }
+    ]
+}

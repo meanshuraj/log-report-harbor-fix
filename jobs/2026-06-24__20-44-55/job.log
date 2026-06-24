@@ -1,0 +1,23 @@
+Skipping image OS validation for hb__log-report: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 721, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 706, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 56, in download_file
+    await self._env._run_docker_compose_command(
+    ...<2 lines>...
+    )
+  File "C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 419, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__qy8zwtf --project-directory C:\Users\rajan\Downloads\log-report\environment -f C:\Users\rajan\AppData\Local\Temp\tmpo1fulveg\log-report__QY8ZWTf-docker-compose-resources.json -f C:\Users\rajan\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\rajan\AppData\Local\Temp\tmpfcas17oe\docker-compose-mounts.json cp main:/app/report.json jobs\2026-06-24__20-44-55\log-report__QY8ZWTf\artifacts\app\report.json. Return code: 1. Stdout:  log-report__qy8zwtf-main-1 Copying log-report__qy8zwtf-main-1:/app/report.json to jobs\2026-06-24__20-44-55\log-report__QY8ZWTf\artifacts\app\report.json
+Error response from daemon: Could not find the file /app/report.json in container 4b1c382ce84324bc9e806f87f858eed1c60dd7f58180ec11ad5a78e8b1f1e308
+. Stderr: None. 

@@ -1,0 +1,87 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+../tests/test_outputs.py FFFF                                            [100%]
+
+=================================== FAILURES ===================================
+________________________ test_output_file_is_valid_json ________________________
+
+    def test_output_file_is_valid_json():
+        """Criterion 1: The output file must exist at /app/report.json and be valid JSON."""
+>       data = load_report()
+               ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created at /app/report.json"
+E       AssertionError: report.json was not created at /app/report.json
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:9: AssertionError
+________________________ test_total_requests_is_correct ________________________
+
+    def test_total_requests_is_correct():
+        """Criterion 2: total_requests must equal the total number of log entries."""
+>       data = load_report()
+               ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created at /app/report.json"
+E       AssertionError: report.json was not created at /app/report.json
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:9: AssertionError
+__________________________ test_unique_ips_is_correct __________________________
+
+    def test_unique_ips_is_correct():
+        """Criterion 3: unique_ips must equal the number of distinct client IP addresses."""
+>       data = load_report()
+               ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created at /app/report.json"
+E       AssertionError: report.json was not created at /app/report.json
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:9: AssertionError
+___________________________ test_top_path_is_correct ___________________________
+
+    def test_top_path_is_correct():
+        """Criterion 4: top_path must equal the most frequently requested path."""
+>       data = load_report()
+               ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created at /app/report.json"
+E       AssertionError: report.json was not created at /app/report.json
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:9: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_output_file_is_valid_json - AssertionEr...
+FAILED ../tests/test_outputs.py::test_total_requests_is_correct - AssertionEr...
+FAILED ../tests/test_outputs.py::test_unique_ips_is_correct - AssertionError:...
+FAILED ../tests/test_outputs.py::test_top_path_is_correct - AssertionError: r...
+============================== 4 failed in 0.10s ===============================
